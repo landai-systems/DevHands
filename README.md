@@ -27,7 +27,6 @@
 ```bash
 git clone https://github.com/your-org/devhands.git
 cd devhands
-python create_devhands_structure.py
 poetry install
 poetry run python -m devhands.main
 ```
