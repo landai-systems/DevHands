@@ -22,80 +22,90 @@
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Locally)
 
 ```bash
 git clone https://github.com/your-org/devhands.git
 cd devhands
+cp .env.example .env  # Add your OpenAI API key here
 poetry install
-poetry run python -m devhands.main
+poetry run python devhands/main.py
 ```
+
+---
+## 🐳 Getting Started (Docker)
+### 📦 Build and run CLI interactively
+```bash
+docker-compose run --rm devhands
+```
+Make sure .env is set up and contains your OpenAI API key.
+
+### 🧪 Run all tests inside container
+```bash
+docker-compose run --rm test
+```
+
+### 🧰 Dev shell (optional)
+```bash
+docker-compose run --rm devhands bash
+```
+You’ll find generated apps under generated_apps/ (volume-mounted on your host).
 
 ---
 
 ## 📦 Architecture Overview
-
 ```text
 devhands/
 ├── devhands/           # App logic (core, domain, infrastructure, cli)
-├── tests/              # Test modules
-├── scripts/            # Helper scripts
-├── ci/                 # CI/CD configs (GitHub Actions, etc.)
-├── Dockerfile
-├── docker-compose.yml
-├── Makefile
-├── .env.example
+├── tests/              # Unit tests for all modules
+├── scripts/            # Shell helpers for lint, test, format
+├── ci/                 # GitHub Actions, CI configs
+├── Dockerfile          # Container definition
+├── docker-compose.yml  # Local development runner
+├── pyproject.toml      # Poetry-based dependency management
+├── .env.example        # Env variable template
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-## 👥 Contributing
+## 🧑‍💻 How to contribute
+```bash
+# Fork and clone your fork
+git clone https://github.com/your-username/devhands.git
+cd devhands
 
-We’re building an open and modular Agentic AI development toolkit. If you're passionate about:
+# Create your feature branch
+git checkout -b feature/your-idea
 
-- LangChain and AI workflows
-- Clean, maintainable architecture
-- Building with agents, not just prompts
+# Make changes and test
+poetry run pytest
 
-...then **we want you!** 💙
+# Commit and push
+git commit -m "Add awesome new feature"
+git push origin feature/your-idea
 
-### How to contribute
-
-- Fork the repo
-- Create a new branch (`git checkout -b feature/your-idea`)
-- Add your code
-- Submit a PR with clear intent and tests
-
+# Open a Pull Request!
+```
 We encourage contributions from developers, AI researchers, prompt engineers and all curious minds!
 
 ---
 
 ## 📄 License
-
 MIT – use it, fork it, make magic with it.
 
 ---
 
-## 🧠 Powered By
-
-- [LangChain](https://www.langchain.com/)
-- [LangGraph](https://www.langchain.com/langgraph)
-- [Python 3.11+](https://www.python.org/)
-- [Docker](https://www.docker.com/)
-
----
-
 ## ✉️ Stay in Touch
-
 Follow the project and share your thoughts:
 
-- GitHub Issues → Feature ideas & bug reports
-- Discussions → Brainstorming & help
-- PRs → New tools, workflows, or templates
+GitHub Issues → Feature ideas & bug reports
+
+Discussions → Brainstorming & help
+
+PRs → New tools, workflows, or templates
 
 Together, we’ll build tools that build tools.
 
-**Let’s build DevHands into a real AI engineer.**
-
+__Let’s build DevHands into a real AI engineer.__
