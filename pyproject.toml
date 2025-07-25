@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "devhands"
+version = "0.1.0"
+description = "Agentic AI CLI tool for creating, analyzing, and improving apps based on the SOLID principle"
+authors = ["landai-systems <land-ai@gmx.de>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "devhands" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.2.0"
+langchain-openai = "^0.1.3"
+openai = "^1.25.1"
+tiktoken = "^0.7.0"
+python-dotenv = "^1.0.1"
+
+# Optional: CLI framework, if you later switch to Typer/Click
+# typer = "^0.12.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pytest-mock = "^3.14.0"
+ruff = "^0.4.6"
+mypy = "^1.10.0"
+types-setuptools = "^70.0.0.20240422"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

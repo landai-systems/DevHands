@@ -1,0 +1,23 @@
+# docker-compose.yml
+# Dockerized local development environment for DevHands CLI
+
+version: "3.9"
+
+services:
+  devhands:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: devhands_cli
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+      - LANGCHAIN_ENDPOINT=${LANGCHAIN_ENDPOINT}
+      - LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT}
+      - DEVHANDS_LOG_LEVEL=${DEVHANDS_LOG_LEVEL}
+      - LLM_MODEL=${LLM_MODEL}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE}
+    command: poetry run python devhands/main.py
