@@ -1,0 +1,45 @@
+# Byte-compiled / cache / temp files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.log
+*.tmp
+
+# Poetry & Python virtual environments
+.env
+.env.*
+.venv/
+poetry.lock
+
+# Test artifacts
+htmlcov/
+coverage.xml
+.cache/
+pytest_cache/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Docker and build artifacts
+*.tar
+*.gz
+*.zip
+docker-compose.override.yml
+dist/
+build/
+
+# Node/npm (if React frontend ever added)
+node_modules/
+npm-debug.log
+
+# LLM and tracing tools
+langchain_tracing/
+.openai_log/
