@@ -43,3 +43,6 @@ npm-debug.log
 # LLM and tracing tools
 langchain_tracing/
 .openai_log/
+
+# Generated Apps
+generated_apps/

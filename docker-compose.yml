@@ -6,7 +6,10 @@ services:
     volumes:
       - .:/app
     environment:
+      - PYTHONPATH=/app
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+    stdin_open: true 
+    tty: true
     command: poetry run python devhands/main.py
 
   test:
