@@ -52,7 +52,7 @@ class AppAnalyzer(AppActionInterface):
             if file.is_file() and file.suffix in {".py", ".tsx", ".ts", ".js", ".jsx"}:
                 if file.name in self.IGNORED_FILENAMES:
                     continue
-                if file.stat().st_size < 20:  # < 20 bytes = empty or nearly empty
+                if file.stat().st_size < 10:  # < 10 bytes = empty or nearly empty
                     continue
                 relevant.append(file)
         return relevant
