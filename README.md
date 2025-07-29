@@ -31,6 +31,13 @@ cp .env.example .env  # Add your OpenAI API key here
 poetry install
 poetry run python devhands/main.py
 ```
+## 👀 What It Looks Like
+
+Here’s a quick look at DevHands in action:
+
+![DevHands CLI Demo](devhands-demo.gif)
+
+*✨ After app creation — DevHands sets up a project in seconds!*
 
 ---
 ## 🐳 Getting Started (Docker)
